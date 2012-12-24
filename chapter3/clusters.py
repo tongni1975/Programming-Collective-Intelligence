@@ -4,7 +4,6 @@ from PIL import Image, ImageDraw
 from math import sqrt
 import random
 
-
 def readfile(filename):
     lines = [line for line in file(filename)]
 
