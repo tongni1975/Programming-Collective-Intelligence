@@ -1,3 +1,7 @@
+#######################################
+# Programming Collective Intelligence #
+#######################################
+
 Examples from [Programming Collective Intelligence](http://oreilly.com/catalog/9780596529321/)
 
 Code was "tidied" up using [PythonTidy](http://pypi.python.org/pypi/PythonTidy/1.11) with the following settings:
