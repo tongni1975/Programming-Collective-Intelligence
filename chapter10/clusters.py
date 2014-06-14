@@ -26,7 +26,7 @@ def pearson(v1,v2):
 def tanimoto(v1,v2):
   c1,c2,shr=0,0,0
 
-  for i in range(len(v1))
+  for i in range(len(v1)):
     if v1[i]!=0: c1+=1 # in v1
     if v2[i]!=0: c2+=1 # in v2
     if v1[i]!=0 and v2[i]!=0: shr+=1 # in both
