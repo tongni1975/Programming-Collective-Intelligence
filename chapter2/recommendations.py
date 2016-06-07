@@ -134,20 +134,20 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
         if other == person:
             continue
         sim = similarity(prefs, person, other)
-    # Ignore scores of zero or lower
-    if sim <= 0:
-        continue
-    for item in prefs[other]:
-        # Only score movies I haven't seen yet
-        if item not in prefs[person] or prefs[person][item] == 0:
-            # Similarity * Score
-            totals.setdefault(item, 0)
-            # The final score is calculated by multiplying each item by the
-            #   similarity and adding these products together
-            totals[item] += prefs[other][item] * sim
-            # Sum of similarities
-            simSums.setdefault(item, 0)
-            simSums[item] += sim
+        # Ignore scores of zero or lower
+        if sim <= 0:
+            continue
+        for item in prefs[other]:
+            # Only score movies I haven't seen yet
+            if item not in prefs[person] or prefs[person][item] == 0:
+                # Similarity * Score
+                totals.setdefault(item, 0)
+                # The final score is calculated by multiplying each item by the
+                #   similarity and adding these products together
+                totals[item] += prefs[other][item] * sim
+                # Sum of similarities
+                simSums.setdefault(item, 0)
+                simSums[item] += sim
     # Create the normalized list
     rankings = [(total / simSums[item], item) for (item, total) in
                 totals.items()]
