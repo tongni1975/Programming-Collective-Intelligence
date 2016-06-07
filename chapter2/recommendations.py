@@ -68,7 +68,7 @@ def sim_distance(prefs, p1, p2):
     # Add up the squares of all the differences
     sum_of_squares = sum([pow(prefs[p1][item] - prefs[p2][item], 2) for item in
                          prefs[p1] if item in prefs[p2]])
-    return 1 / (1 + sum_of_squares)
+    return 1 / (1 + sqrt(sum_of_squares))
 
 
 def sim_pearson(prefs, p1, p2):
